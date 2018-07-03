@@ -16,6 +16,12 @@ public class NewList {
 
     public void addElement(String element)
     {
-        newList.add("pkjj");
+        newList.add(0, element);
     }
+
+    public String getItem() {
+        String tempElement=newList.get(0);
+        return tempElement;
+    }
+
 }

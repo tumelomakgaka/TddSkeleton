@@ -10,7 +10,7 @@ public class ExampleTest {
 //	public void canAnswerTheUniversalQuestion() {
 //		assertThat(new Example().answer(), is(42));
 //	}
-
+	NewList newList=new NewList();
 	@Test
 	public void isListEmptyWhenInitialised() {
 		assertThat(new NewList().isEmpty(),is(true));
@@ -22,6 +22,22 @@ public class ExampleTest {
 		NewList newList=new NewList();
 		newList.addElement(element);
 		assertThat(newList.isEmpty(),is(false));
+	}
+
+	@Test
+	public void retrieveItemsFromList() {
+		NewList newList=new NewList();
+		newList.addElement("element");
+		String retrievedElement = newList.getItem();
+		assertThat(retrievedElement,is("element"));
+	}
+
+	@Test
+	public void mostRecentItemShouldBeFirst() {
+		newList.addElement("element");
+		newList.addElement("element2");
+		String retrievedElement = newList.getItem();
+		assertThat(retrievedElement,is("element2"));
 	}
 
 
